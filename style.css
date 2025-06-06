@@ -1,85 +1,303 @@
+/* General Styling */
 body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
   margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.game-canvas {
-  width: 100%;
-  height: 100vw;
-  max-width: 500px;
-  max-height:500px;
-  margin-left: auto;
-  margin-right: auto;
+/* Dark Theme */
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-.keys {
-  font-family: 'Lato', sans-serif;
-  text-align: center;
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  height: 200px;
-  margin: auto;
+body[data-theme="dark"] .container {
+  background: #1e1e1e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.up {
-  position: relative;
-  top: -4px;
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3 {
+  color: #ffffff;
 }
 
-.chevron::before {
-  border-style: solid;
-  border-width: 8px 8px 0 0;
-  content: '';
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  top: -10px;
-  position: relative;
-  transform: rotate(-45deg);
+body[data-theme="dark"] h2 {
+  border-bottom-color: #333;
 }
 
-.chevron.down::before {
-  transform: rotate(135deg);
-  top: -22px;
+body[data-theme="dark"] a {
+  color: #64b5f6;
 }
 
-.chevron.right::before {
-  transform: rotate(45deg);
-  top: -18px;
-  left: -5px;
+body[data-theme="dark"] a:hover {
+  color: #42a5f5;
 }
 
-.chevron.left::before {
-  transform: rotate(225deg);
-  top: -18px;
-  left: 5px;
+body[data-theme="dark"] #skills li {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
 }
 
-.arr {
-  cursor: pointer;
-  width: 70px;
-  height: 70px;
-  text-align: center;
-  line-height: 100px;
-  background: gray;
+body[data-theme="dark"] .project-card {
+  background: #252525;
+  border-color: #333;
+}
+
+body[data-theme="dark"] .project-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+body[data-theme="dark"] .project-meta {
+  color: #b0b0b0;
+}
+
+body[data-theme="dark"] .education-details {
+  color: #b0b0b0;
+}
+
+body[data-theme="dark"] footer {
+  border-top-color: #333;
+  color: #888;
+}
+
+body[data-theme="dark"] .contact-info {
+  color: #b0b0b0;
+}
+
+body[data-theme="dark"] .subtitle {
+  color: #b0b0b0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #007bff;
   color: white;
-  font-size: 50px;
-  border-right: 10px solid #ccc;
-  border-bottom: 10px solid #ccc;
-  border-left: 10px solid #ddd;
-  border-top: 10px solid #eee;
-  display: inline-block;
-  margin: 5px;
-  transition: all .05s linear;
-  user-select: none;
-}
-
-.arr:active {
-  background: #555;
-}
-
-#game-container {
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
   display: flex;
-  flex-direction: column;
-  background-color: rgba(220, 220, 220, 0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  background: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+body[data-theme="dark"] .theme-toggle {
+  background: #64b5f6;
+}
+
+body[data-theme="dark"] .theme-toggle:hover {
+  background: #42a5f5;
+}
+
+.theme-toggle .material-icons {
+  font-size: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+h2 {
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Header */
+header .profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px;
+  border: 3px solid #007bff;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.profile-info .subtitle {
+  margin: 5px 0 15px;
+  font-size: 1.2em;
+  color: #555;
+  font-weight: 300;
+}
+
+.contact-info {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.contact-info a {
+  font-weight: 500;
+}
+
+/* Sections */
+section {
+  margin-bottom: 30px;
+}
+
+#skills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#skills li {
+  background-color: #e9ecef;
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px 5px 5px 0;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+#skills strong {
+  color: #007bff;
+}
+
+/* Projects */
+.project-card {
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h3 {
+  margin-bottom: 5px;
+}
+
+.project-meta {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.project-meta a {
+  font-weight: bold;
+}
+
+.project-card ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.project-card ul li {
+  margin-bottom: 5px;
+}
+
+/* Education */
+.education-item h3 {
+  margin-bottom: 5px;
+}
+
+.education-details {
+  font-weight: 500;
+  color: #555;
+  margin: 0 0 10px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #999;
+  font-size: 0.9em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  header .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-avatar {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .profile-info h1 {
+    font-size: 2em;
+  }
+
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .theme-toggle .material-icons {
+    font-size: 18px;
+  }
 }

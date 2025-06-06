@@ -1,26 +1,240 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Snake Game</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div id="game-container">
-		<canvas id="gc" class="game-canvas" width="400" height="400"></canvas>
-	</div>
-	<div class="keys">
-	  <a class="up arr" onclick="Snake.action('up')">
-	    <i class="chevron up"></i></a>
-	  <br />
-	  <a class="left arr" onclick="Snake.action('left')">
-	    <i class="chevron left"></i></a>
-	  <a class="down arr" onclick="Snake.action('down')">
-	    <i class="chevron down"></i></a>
-	  <a class="right arr" onclick="Snake.action('right')">
-	    <i class="chevron right"></i></a>
-	</div>
-	<script type="text/javascript" src="game.js"></script>
-</body>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trần Duy Toàn | Fullstack Intern</title>
+    <meta
+      name="description"
+      content="Hồ sơ cá nhân và các dự án của Trần Duy Toàn, một lập trình viên Fullstack."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+		<script src="js/theme-manager.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="material-icons">dark_mode</span>
+      </button>
+
+      <header>
+        <div class="profile-header">
+          <img
+            src="./images/avatar.jpg"
+            alt="Ảnh đại diện Trần Duy Toàn"
+            class="profile-avatar"
+          />
+          <div class="profile-info">
+            <h1>Trần Duy Toàn</h1>
+            <p class="subtitle">Fullstack Intern</p>
+            <div class="contact-info">
+              <a href="mailto:toantranx17ht@gmail.com"
+                >toantranx17ht@gmail.com</a
+              >
+              | <span>0946991397</span> | <span>Bắc Từ Liêm, Hà Nội</span> |
+              <a href="https://github.com/tranduytoan" target="_blank"
+                >github.com/tranduytoan</a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="objective">
+          <h2>Mục tiêu nghề nghiệp</h2>
+          <p>
+            <strong>Ngắn hạn:</strong> Tích lũy kinh nghiệm qua các kỳ thực tập,
+            tham gia vào các dự án thực tế để nâng cao kỹ năng lập trình, tư duy
+            thiết kế hệ thống và khả năng làm việc nhóm.
+          </p>
+          <p>
+            <strong>Dài hạn:</strong> Trở thành một kỹ sư phần mềm chuyên
+            nghiệp, có tư duy hệ thống vững chắc, chuyên môn sâu và kỹ năng làm
+            việc hiệu quả để đóng góp vào các sản phẩm công nghệ có giá trị.
+          </p>
+        </section>
+
+        <section id="education">
+          <h2>Học vấn</h2>
+          <div class="education-item">
+            <h3>Trường Đại học Công nghệ - Đại học Quốc Gia Hà Nội</h3>
+            <p class="education-details">
+              <strong>Chuyên ngành:</strong> Công nghệ thông tin định hướng thị
+              trường Nhật Bản | <strong>2022 - 2026</strong> (dự kiến)
+            </p>
+            <p>
+              Chương trình đào tạo các kiến thức cốt lõi và hiện đại về CNTT,
+              tập trung vào quy trình xây dựng, triển khai, quản lý và vận hành
+              các hệ thống phần mềm chuyên nghiệp.
+            </p>
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2>Kỹ năng</h2>
+          <ul>
+            <li><strong>Ngôn ngữ:</strong> Java, Javascript, C/C++, Python</li>
+            <li>
+              <strong>Framework:</strong> Spring Boot, Node.js, ReactJS, React
+              Native, Express.js
+            </li>
+            <li>
+              <strong>Cơ sở dữ liệu:</strong> MySQL, MongoDB, Neo4J, Redis,
+              SQLite
+            </li>
+            <li><strong>Hệ điều hành:</strong> Windows, Android, Linux</li>
+            <li>
+              <strong>Nền tảng & Công cụ:</strong> Docker, Git, Github, Jira,
+              Slack
+            </li>
+          </ul>
+        </section>
+
+        <section id="projects">
+          <h2>Dự án nổi bật</h2>
+
+          <article class="project-card">
+            <h3>Better Read - Nền tảng tìm kiếm & mua sách trực tuyến</h3>
+            <p class="project-meta">
+              <span>Thời gian: 02/2024 - 04/2024</span> |
+              <a
+                href="https://github.com/tranduytoan/Better-Read"
+                target="_blank"
+                >Link GitHub</a
+              >
+            </p>
+            <p>
+              <strong>Mục tiêu:</strong> Xây dựng nền tảng thân thiện cho người
+              dùng tìm kiếm, mua sách, đồng thời rèn luyện kỹ năng backend nâng
+              cao như đồng bộ dữ liệu, tối ưu truy vấn, caching và hệ thống gợi
+              ý.
+            </p>
+            <div>
+              <strong>Điểm nổi bật:</strong>
+              <ul>
+                <li>
+                  Áp dụng <strong>Kafka</strong> để đồng bộ dữ liệu giữa nhiều
+                  CSDL.
+                </li>
+                <li>
+                  Sử dụng <strong>Redis</strong> cho caching và rate limiting.
+                </li>
+                <li>
+                  Tối ưu CSDL với <strong>phân mảnh (sharding)</strong>,
+                  <strong>đánh chỉ mục (indexing)</strong>, và
+                  <strong>replication</strong>.
+                </li>
+                <li>
+                  Tích hợp <strong>ElasticSearch</strong> cho tìm kiếm nhanh và
+                  <strong>Neo4j</strong> cho hệ thống gợi ý sản phẩm.
+                </li>
+              </ul>
+            </div>
+            <p>
+              <strong>Công nghệ:</strong> Java, Spring, Hibernate, MySQL,
+              MongoDB, Redis, Neo4j, Kafka, AngularJS, Node.js, MVC.
+            </p>
+            <p><strong>Vai trò:</strong> Fullstack (tập trung Backend)</p>
+          </article>
+
+          <article class="project-card">
+            <h3>Bid Market - Nền tảng đấu giá trực tuyến hiện đại</h3>
+            <p class="project-meta">
+              <span>Thời gian: 09/2024 - 12/2024</span> |
+              <a
+                href="https://github.com/tranduytoan/BidMarket"
+                target="_blank"
+                >Link GitHub</a
+              >
+            </p>
+            <p>
+              <strong>Mục tiêu:</strong> Xây dựng nền tảng đấu giá an toàn, kết
+              nối người mua và người bán, đồng thời rèn luyện kỹ năng làm việc
+              nhóm và làm quen với React Native.
+            </p>
+            <p>
+              <strong>Điểm nổi bật:</strong> Giải quyết các luồng nghiệp vụ phức
+              tạp của đấu giá như tự động đấu giá, giới hạn, kiểm soát trạng
+              thái tài khoản, đảm bảo tính công bằng và bảo mật.
+            </p>
+            <p>
+              <strong>Công nghệ:</strong> React Native, Java, Spring, MySQL,
+              MongoDB, Node.js, MVC.
+            </p>
+            <p><strong>Vai trò:</strong> Fullstack (tập trung Frontend)</p>
+          </article>
+
+          <article class="project-card">
+            <h3>EVi-Dictionary - Từ điển Anh-Việt offline</h3>
+            <p class="project-meta">
+              <span>Thời gian: 10/2023 - 11/2023</span> |
+              <a
+                href="https://github.com/tranduytoan/EVi-Dictionary"
+                target="_blank"
+                >Link GitHub</a
+              >
+            </p>
+            <p>
+              <strong>Mục tiêu:</strong> Xây dựng ứng dụng học tiếng Anh offline
+              hiệu quả, thực hành về Java, FXML và kiến trúc hướng đối tượng
+              (OOP).
+            </p>
+            <div>
+              <strong>Điểm nổi bật:</strong>
+              <ul>
+                <li>
+                  Áp dụng các Design Pattern như
+                  <strong>Singleton, Prototype</strong>.
+                </li>
+                <li>
+                  Triển khai cấu trúc dữ liệu <strong>Trie</strong> giúp tra cứu
+                  từ vựng cực nhanh so với truy vấn CSDL thông thường.
+                </li>
+              </ul>
+            </div>
+            <p><strong>Công nghệ:</strong> Java, SQLite, FXML, Git, XML.</p>
+            <p><strong>Vai trò:</strong> Lập trình viên duy nhất</p>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <p>© 2025 Trần Duy Toàn</p>
+      </footer>
+    </div>
+
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.body;
+      const icon = themeToggle.querySelector(".material-icons");
+
+			const currentTheme = localStorage.getItem("theme") || "light";
+      body.setAttribute("data-theme", currentTheme);
+      updateIcon(currentTheme);
+
+      themeToggle.addEventListener("click", function () {
+        const currentTheme = body.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+        body.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateIcon(newTheme);
+      });
+
+      function updateIcon(theme) {
+        icon.textContent = theme === "dark" ? "light_mode" : "dark_mode";
+      }
+    </script>
+  </body>
 </html>
