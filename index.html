@@ -22,6 +22,12 @@
     <script src="/js/language-manager.js"></script>
   </head>
   <body>
+		<script>
+      const body = document.body;
+			const currentTheme = localStorage.getItem("theme") || "light";
+      body.setAttribute("data-theme", currentTheme);
+		</script>
+
     <div class="container">
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
         <span class="material-icons">dark_mode</span>
@@ -351,12 +357,7 @@
 
     <script>
       const themeToggle = document.getElementById("theme-toggle");
-      const body = document.body;
       const icon = themeToggle.querySelector(".material-icons");
-
-      const currentTheme = localStorage.getItem("theme") || "light";
-      body.setAttribute("data-theme", currentTheme);
-      updateIcon(currentTheme);
 
       themeToggle.addEventListener("click", function () {
         const currentTheme = body.getAttribute("data-theme");
