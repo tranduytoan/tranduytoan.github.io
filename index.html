@@ -19,12 +19,20 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-		<script src="js/theme-manager.js"></script>
+    <script src="js/language-manager.js"></script>
   </head>
   <body>
     <div class="container">
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
         <span class="material-icons">dark_mode</span>
+      </button>
+
+      <button
+        id="language-toggle"
+        class="language-toggle"
+        aria-label="Toggle language"
+      >
+        <span class="language-text">EN</span>
       </button>
 
       <header>
@@ -36,7 +44,7 @@
           />
           <div class="profile-info">
             <h1>Trần Duy Toàn</h1>
-            <p class="subtitle">Fullstack Intern</p>
+            <p class="subtitle" data-translate="subtitle">Fullstack Intern</p>
             <div class="contact-info">
               <a href="mailto:toantranx17ht@gmail.com"
                 >toantranx17ht@gmail.com</a
@@ -52,28 +60,43 @@
 
       <main>
         <section id="objective">
-          <h2>Mục tiêu nghề nghiệp</h2>
+          <h2 data-translate="objective">Mục tiêu nghề nghiệp</h2>
           <p>
-            <strong>Ngắn hạn:</strong> Tích lũy kinh nghiệm qua các kỳ thực tập,
-            tham gia vào các dự án thực tế để nâng cao kỹ năng lập trình, tư duy
-            thiết kế hệ thống và khả năng làm việc nhóm.
+            <strong data-translate="shortTerm">Ngắn hạn:</strong>
+            <span data-translate="shortTermText"
+              >Tích lũy kinh nghiệm qua các kỳ thực tập, tham gia vào các dự án
+              thực tế để nâng cao kỹ năng lập trình, tư duy thiết kế hệ thống và
+              khả năng làm việc nhóm.</span
+            >
           </p>
           <p>
-            <strong>Dài hạn:</strong> Trở thành một kỹ sư phần mềm chuyên
-            nghiệp, có tư duy hệ thống vững chắc, chuyên môn sâu và kỹ năng làm
-            việc hiệu quả để đóng góp vào các sản phẩm công nghệ có giá trị.
+            <strong data-translate="longTerm">Dài hạn:</strong>
+            <span data-translate="longTermText"
+              >Trở thành một kỹ sư phần mềm chuyên nghiệp, có tư duy hệ thống
+              vững chắc, chuyên môn sâu và kỹ năng làm việc hiệu quả để đóng góp
+              vào các sản phẩm công nghệ có giá trị.</span
+            >
           </p>
         </section>
 
         <section id="education">
-          <h2>Học vấn</h2>
+          <h2 data-translate="education">Học vấn</h2>
           <div class="education-item">
-            <h3>Trường Đại học Công nghệ - Đại học Quốc Gia Hà Nội</h3>
+            <h3 data-translate="university">
+              Trường Đại học Công nghệ - Đại học Quốc Gia Hà Nội
+            </h3>
             <p class="education-details">
-              <strong>Chuyên ngành:</strong> Công nghệ thông tin định hướng thị
-              trường Nhật Bản | <strong>2022 - 2026</strong> (dự kiến)
+              <strong data-translate="major">Chuyên ngành:</strong>
+              <span data-translate="majorText"
+                >Công nghệ thông tin định hướng thị trường Nhật Bản</span
+              >
+              |
+              <strong
+                ><span data-translate="period">2022 - 2026</span>
+                <span data-translate="expected">(dự kiến)</span></strong
+              >
             </p>
-            <p>
+            <p data-translate="universityDesc">
               Chương trình đào tạo các kiến thức cốt lõi và hiện đại về CNTT,
               tập trung vào quy trình xây dựng, triển khai, quản lý và vận hành
               các hệ thống phần mềm chuyên nghiệp.
@@ -82,32 +105,49 @@
         </section>
 
         <section id="skills">
-          <h2>Kỹ năng</h2>
+          <h2 data-translate="skills">Kỹ năng</h2>
           <ul>
-            <li><strong>Ngôn ngữ:</strong> Java, Javascript, C/C++, Python</li>
             <li>
-              <strong>Framework:</strong> Spring Boot, Node.js, ReactJS, React
-              Native, Express.js
+              <strong data-translate="languages">Ngôn ngữ:</strong> Java,
+              Javascript, C/C++, Python
             </li>
             <li>
-              <strong>Cơ sở dữ liệu:</strong> MySQL, MongoDB, Neo4J, Redis,
-              SQLite
+              <strong data-translate="frameworks">Framework:</strong> Spring
+              Boot, Node.js, ReactJS, React Native, Express.js
             </li>
-            <li><strong>Hệ điều hành:</strong> Windows, Android, Linux</li>
             <li>
-              <strong>Nền tảng & Công cụ:</strong> Docker, Git, Github, Jira,
-              Slack
+              <strong data-translate="databases">Cơ sở dữ liệu:</strong> MySQL,
+              MongoDB, Neo4J, Redis, SQLite
+            </li>
+            <li>
+              <strong data-translate="os">Hệ điều hành:</strong> Windows,
+              Android, Linux
+            </li>
+            <li>
+              <strong data-translate="tools">Nền tảng & Công cụ:</strong>
+              Docker, Git, Github, Jira, Slack
             </li>
           </ul>
         </section>
 
         <section id="projects">
-          <h2>Dự án nổi bật</h2>
+          <h2 data-translate="projects">Dự án nổi bật</h2>
 
           <article class="project-card">
-            <h3>Better Read - Nền tảng tìm kiếm & mua sách trực tuyến</h3>
+            <h3>
+              <span class="project-title" data-lang="vi"
+                >Better Read - Nền tảng tìm kiếm & mua sách trực tuyến</span
+              >
+              <span class="project-title" data-lang="en" style="display: none"
+                >Better Read - Online Book Search & Shopping Platform</span
+              >
+            </h3>
             <p class="project-meta">
-              <span>Thời gian: 02/2024 - 04/2024</span> |
+              <span
+                ><span data-translate="time">Thời gian:</span> 02/2024 -
+                04/2024</span
+              >
+              |
               <a
                 href="https://github.com/tranduytoan/Better-Read"
                 target="_blank"
@@ -115,70 +155,142 @@
               >
             </p>
             <p>
-              <strong>Mục tiêu:</strong> Xây dựng nền tảng thân thiện cho người
-              dùng tìm kiếm, mua sách, đồng thời rèn luyện kỹ năng backend nâng
-              cao như đồng bộ dữ liệu, tối ưu truy vấn, caching và hệ thống gợi
-              ý.
+              <strong data-translate="goal">Mục tiêu:</strong>
+              <span data-lang="vi"
+                >Xây dựng nền tảng thân thiện cho người dùng tìm kiếm, mua sách,
+                đồng thời rèn luyện kỹ năng backend nâng cao như đồng bộ dữ
+                liệu, tối ưu truy vấn, caching và hệ thống gợi ý.</span
+              >
+              <span data-lang="en" style="display: none"
+                >Build a user-friendly platform for book searching and
+                purchasing, while practicing advanced backend skills like data
+                synchronization, query optimization, caching, and recommendation
+                systems.</span
+              >
             </p>
             <div>
-              <strong>Điểm nổi bật:</strong>
+              <strong data-translate="highlights">Điểm nổi bật:</strong>
               <ul>
-                <li>
+                <li data-lang="vi">
                   Áp dụng <strong>Kafka</strong> để đồng bộ dữ liệu giữa nhiều
                   CSDL.
                 </li>
-                <li>
+                <li data-lang="en" style="display: none">
+                  Applied <strong>Kafka</strong> for data synchronization
+                  between multiple databases.
+                </li>
+                <li data-lang="vi">
                   Sử dụng <strong>Redis</strong> cho caching và rate limiting.
                 </li>
-                <li>
+                <li data-lang="en" style="display: none">
+                  Used <strong>Redis</strong> for caching and rate limiting.
+                </li>
+                <li data-lang="vi">
                   Tối ưu CSDL với <strong>phân mảnh (sharding)</strong>,
                   <strong>đánh chỉ mục (indexing)</strong>, và
                   <strong>replication</strong>.
                 </li>
-                <li>
+                <li data-lang="en" style="display: none">
+                  Optimized database with <strong>sharding</strong>,
+                  <strong>indexing</strong>, and <strong>replication</strong>.
+                </li>
+                <li data-lang="vi">
                   Tích hợp <strong>ElasticSearch</strong> cho tìm kiếm nhanh và
                   <strong>Neo4j</strong> cho hệ thống gợi ý sản phẩm.
+                </li>
+                <li data-lang="en" style="display: none">
+                  Integrated <strong>ElasticSearch</strong> for fast search and
+                  <strong>Neo4j</strong> for product recommendation system.
                 </li>
               </ul>
             </div>
             <p>
-              <strong>Công nghệ:</strong> Java, Spring, Hibernate, MySQL,
-              MongoDB, Redis, Neo4j, Kafka, AngularJS, Node.js, MVC.
+              <strong data-translate="technology">Công nghệ:</strong> Java,
+              Spring, Hibernate, MySQL, MongoDB, Redis, Neo4j, Kafka, AngularJS,
+              Node.js, MVC.
             </p>
-            <p><strong>Vai trò:</strong> Fullstack (tập trung Backend)</p>
+            <p>
+              <strong data-translate="role">Vai trò:</strong>
+              <span data-lang="vi">Fullstack (tập trung Backend)</span>
+              <span data-lang="en" style="display: none"
+                >Fullstack (Backend-focused)</span
+              >
+            </p>
           </article>
 
           <article class="project-card">
-            <h3>Bid Market - Nền tảng đấu giá trực tuyến hiện đại</h3>
+            <h3>
+              <span class="project-title" data-lang="vi"
+                >Bid Market - Nền tảng đấu giá trực tuyến hiện đại</span
+              >
+              <span class="project-title" data-lang="en" style="display: none"
+                >Bid Market - Modern Online Auction Platform</span
+              >
+            </h3>
             <p class="project-meta">
-              <span>Thời gian: 09/2024 - 12/2024</span> |
-              <a
-                href="https://github.com/tranduytoan/BidMarket"
-                target="_blank"
+              <span
+                ><span data-translate="time">Thời gian:</span> 09/2024 -
+                12/2024</span
+              >
+              |
+              <a href="https://github.com/tranduytoan/BidMarket" target="_blank"
                 >Link GitHub</a
               >
             </p>
             <p>
-              <strong>Mục tiêu:</strong> Xây dựng nền tảng đấu giá an toàn, kết
-              nối người mua và người bán, đồng thời rèn luyện kỹ năng làm việc
-              nhóm và làm quen với React Native.
+              <strong data-translate="goal">Mục tiêu:</strong>
+              <span data-lang="vi"
+                >Xây dựng nền tảng đấu giá an toàn, kết nối người mua và người
+                bán, đồng thời rèn luyện kỹ năng làm việc nhóm và làm quen với
+                React Native.</span
+              >
+              <span data-lang="en" style="display: none"
+                >Build a secure auction platform connecting buyers and sellers,
+                while enhancing teamwork skills and getting familiar with React
+                Native.</span
+              >
             </p>
             <p>
-              <strong>Điểm nổi bật:</strong> Giải quyết các luồng nghiệp vụ phức
-              tạp của đấu giá như tự động đấu giá, giới hạn, kiểm soát trạng
-              thái tài khoản, đảm bảo tính công bằng và bảo mật.
+              <strong data-translate="highlights">Điểm nổi bật:</strong>
+              <span data-lang="vi"
+                >Giải quyết các luồng nghiệp vụ phức tạp của đấu giá như tự động
+                đấu giá, giới hạn, kiểm soát trạng thái tài khoản, đảm bảo tính
+                công bằng và bảo mật.</span
+              >
+              <span data-lang="en" style="display: none"
+                >Address complex auction workflows like auto-bidding, bid
+                increments, account status control, ensuring fairness and
+                security.</span
+              >
             </p>
             <p>
-              <strong>Công nghệ:</strong> React Native, Java, Spring, MySQL,
-              MongoDB, Node.js, MVC.
+              <strong data-translate="technology">Công nghệ:</strong> React
+              Native, Java, Spring, MySQL, MongoDB, Node.js, MVC.
             </p>
-            <p><strong>Vai trò:</strong> Fullstack (tập trung Frontend)</p>
+            <p>
+              <strong data-translate="role">Vai trò:</strong>
+              <span data-lang="vi">Fullstack (tập trung Frontend)</span>
+              <span data-lang="en" style="display: none"
+                >Fullstack (Frontend-focused)</span
+              >
+            </p>
           </article>
 
           <article class="project-card">
-            <h3>EVi-Dictionary - Từ điển Anh-Việt offline</h3>
+            <h3>
+              <span class="project-title" data-lang="vi"
+                >EVi-Dictionary - Từ điển Anh-Việt offline</span
+              >
+              <span class="project-title" data-lang="en" style="display: none"
+                >EVi-Dictionary - Offline English-Vietnamese Dictionary</span
+              >
+            </h3>
             <p class="project-meta">
-              <span>Thời gian: 10/2023 - 11/2023</span> |
+              <span
+                ><span data-translate="time">Thời gian:</span> 10/2023 -
+                11/2023</span
+              >
+              |
               <a
                 href="https://github.com/tranduytoan/EVi-Dictionary"
                 target="_blank"
@@ -186,31 +298,54 @@
               >
             </p>
             <p>
-              <strong>Mục tiêu:</strong> Xây dựng ứng dụng học tiếng Anh offline
-              hiệu quả, thực hành về Java, FXML và kiến trúc hướng đối tượng
-              (OOP).
+              <strong data-translate="goal">Mục tiêu:</strong>
+              <span data-lang="vi"
+                >Xây dựng ứng dụng học tiếng Anh offline hiệu quả, thực hành về
+                Java, FXML và kiến trúc hướng đối tượng (OOP).</span
+              >
+              <span data-lang="en" style="display: none"
+                >Develop an effective offline English learning app, practicing
+                Java, FXML, and Object-Oriented Programming (OOP)
+                architecture.</span
+              >
             </p>
             <div>
-              <strong>Điểm nổi bật:</strong>
+              <strong data-translate="highlights">Điểm nổi bật:</strong>
               <ul>
-                <li>
+                <li data-lang="vi">
                   Áp dụng các Design Pattern như
                   <strong>Singleton, Prototype</strong>.
                 </li>
-                <li>
+                <li data-lang="en" style="display: none">
+                  Applied Design Patterns like
+                  <strong>Singleton, Prototype</strong>.
+                </li>
+                <li data-lang="vi">
                   Triển khai cấu trúc dữ liệu <strong>Trie</strong> giúp tra cứu
                   từ vựng cực nhanh so với truy vấn CSDL thông thường.
                 </li>
+                <li data-lang="en" style="display: none">
+                  Implemented <strong>Trie</strong> data structure for
+                  ultra-fast vocabulary lookup compared to traditional DB
+                  queries.
+                </li>
               </ul>
             </div>
-            <p><strong>Công nghệ:</strong> Java, SQLite, FXML, Git, XML.</p>
-            <p><strong>Vai trò:</strong> Lập trình viên duy nhất</p>
+            <p>
+              <strong data-translate="technology">Công nghệ:</strong> Java,
+              SQLite, FXML, Git, XML.
+            </p>
+            <p>
+              <strong data-translate="role">Vai trò:</strong>
+              <span data-lang="vi">Lập trình viên duy nhất</span>
+              <span data-lang="en" style="display: none">Sole Developer</span>
+            </p>
           </article>
         </section>
       </main>
 
       <footer>
-        <p>© 2025 Trần Duy Toàn</p>
+        <p data-translate="copyright">© 2025 Trần Duy Toàn</p>
       </footer>
     </div>
 
@@ -219,7 +354,7 @@
       const body = document.body;
       const icon = themeToggle.querySelector(".material-icons");
 
-			const currentTheme = localStorage.getItem("theme") || "light";
+      const currentTheme = localStorage.getItem("theme") || "light";
       body.setAttribute("data-theme", currentTheme);
       updateIcon(currentTheme);
 
@@ -235,6 +370,39 @@
       function updateIcon(theme) {
         icon.textContent = theme === "dark" ? "light_mode" : "dark_mode";
       }
+
+      const languageToggle = document.getElementById("language-toggle");
+      const languageText = languageToggle.querySelector(".language-text");
+
+      languageToggle.addEventListener("click", function () {
+        const currentLang = window.languageManager.getCurrentLanguage();
+        const newLang = currentLang === "vi" ? "en" : "vi";
+
+        window.languageManager.setLanguage(newLang);
+        updateLanguageToggle(newLang);
+        updateProjectContent(newLang);
+      });
+
+      function updateLanguageToggle(lang) {
+        languageText.textContent = lang === "vi" ? "EN" : "VI";
+      }
+
+      function updateProjectContent(lang) {
+        document.querySelectorAll("[data-lang]").forEach((element) => {
+          const elementLang = element.getAttribute("data-lang");
+          if (elementLang === lang) {
+            element.style.display = "";
+          } else {
+            element.style.display = "none";
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentLang = window.languageManager.getCurrentLanguage();
+        updateLanguageToggle(currentLang);
+        updateProjectContent(currentLang);
+      });
     </script>
   </body>
 </html>
