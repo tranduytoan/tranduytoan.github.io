@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Wrangler
+.wrangler/
+
+# Environment files
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
