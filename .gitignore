@@ -1,21 +1,8 @@
-# Node modules
-node_modules/
-
-# Wrangler
-.wrangler/
-
-# Environment files
+/node_modules
+/docs/mockups-design/
 .env
-.env.local
 
-# OS files
-.DS_Store
-Thumbs.db
-
-# Editor files
-.vscode/
-.idea/
-
-# Logs
-*.log
-npm-debug.log*
+/local_only
+/temp
+*.temp.md
+*/*.temp.md

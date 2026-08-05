@@ -1,6 +1,0 @@
-name = "tranduytoan-portfolio"
-compatibility_date = "2024-08-07"
-
-[assets]
-directory = "./"
-exclude = ["wrangler.toml", "*.md", ".git/**", "node_modules/**", "package*.json"]
